@@ -19,7 +19,7 @@ class ApiController extends Controller
         curl_setopt($ch, CURLOPT_USERAGENT, $config['useragent']);
         $headers[] = 'Accept: application/vnd.github+json';
 
-        $headers[] = 'Authorization: Bearer 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' ;//. $this->getToken();
+        $headers[] = 'Authorization: Bearer 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' ;//. $this->getToken();
         $headers[] = 'X-Github-Api-Version: 2022-11-28';
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
@@ -30,16 +30,13 @@ class ApiController extends Controller
         
         curl_close($ch);
         $result = json_decode($result);
-        //echo "<pre>"; var_dump($result);exit;
     
-        $i= 0;
         foreach($result as $key => $value) {
             $output[$key]['id'] = $value->id;
             $output[$key]['url'] = $value->url;
             $output[$key]['description'] = $value->description;
-            $i++;
         }
-        return response()->json(json_encode($output));
 
+        return response()->json(json_encode($output));
     }
 }
