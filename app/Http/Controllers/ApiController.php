@@ -19,7 +19,7 @@ class ApiController extends Controller
         curl_setopt($ch, CURLOPT_USERAGENT, $config['useragent']);
         $headers[] = 'Accept: application/vnd.github+json';
 
-        $headers[] = 'Authorization: Bearer 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' ;//. $this->getToken();
+        $headers[] = 'Authorization: Bearer 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' ;
         $headers[] = 'X-Github-Api-Version: 2022-11-28';
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
